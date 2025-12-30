@@ -1,27 +1,35 @@
-name: 打包 nuxt 项目
-on: push
+name: Build and Deploy Nuxt
 
-permissions: 
-  contents: read
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write   # ⚠️ gh-pages 必须是 write
 
 jobs:
-  npm-build:
-    name: 构建项目
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
-      - run: |
-          npm install
-          npm run build
-      - name: 部署
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate static site
+        run: npx nuxi generate
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          branch: gh-pages
-          folder: .output/public
           # github_token: ${{ secrets.GITHUB_TOKEN }}
-          # publish_dir: ./dist
+          publish_dir: .output/public
