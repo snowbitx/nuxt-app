@@ -1,75 +1,47 @@
-# Nuxt Minimal Starter
+# 目录结构
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+├── app/
+│   ├── layout/
+│   ├── middleware/
+│   ├── plugins/
+│   └── providers/
+│
+├── components/
+│   ├── ui/                 # shadcn 原子组件（Button/Input/...）
+│   ├── base/               # 基础封装组件
+│   ├── business/           # 业务组件（强加分）
+│   └── layout/             # 布局组件
+│
+├── composables/
+│   ├── useAuth.ts
+│   ├── usePermission.ts
+│   ├── useTheme.ts
+│   ├── useRequest.ts
+│   └── useProTable.ts
+│
+├── features/               # ⭐ 高级项目核心：按业务模块划分
+│   ├── auth/
+│   │   ├── api.ts
+│   │   ├── composables.ts
+│   │   └── components/
+│   ├── dashboard/
+│   ├── user/
+│   ├── system/
+│   └── ai/
+│
+├── design-system/          # ⭐ shadcn 高级化核心
+│   ├── tokens/
+│   ├── themes/
+│   ├── variants/
+│   └── index.ts
+│
+├── server/
+│   ├── api/                # BFF 接口层
+│   ├── services/           # 服务层
+│   └── utils/
+│
+├── utils/
+├── types/
+├── constants/
+├── docs/                   # 架构文档
+├── tests/
