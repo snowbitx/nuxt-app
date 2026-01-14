@@ -1,6 +1,6 @@
 /**
- * 
- * @param {*} fn 返回promise的函数 
+ *
+ * @param {*} fn 返回promise的函数
  * @description  限制重复请求
  */
 export function createRequestCash(fn) {
@@ -12,18 +12,18 @@ export function createRequestCash(fn) {
   }
 }
 
-const loadData = createRequestCash(function () {
-  return new Promise((resolve, reject) => {
-    console.log('发请求了');
+const loadData = createRequestCash(() => {
+  return new Promise((resolve, _reject) => {
+    console.log('发请求了')
     setTimeout(() => {
       resolve({ id: 1 })
-    }, 1000);
-  });
+    }, 1000)
+  })
 })
 
 loadData().then((res) => {
-  console.log('res :>> ', res);
+  console.log('res :>> ', res)
 })
 loadData().then((res) => {
-  console.log('res :>> ', res);
+  console.log('res :>> ', res)
 })

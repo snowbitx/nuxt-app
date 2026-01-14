@@ -1,4 +1,3 @@
-
 /**
  * 数组去重
  * @param {Array} arr 需要去重的数组
@@ -7,7 +6,7 @@
  */
 export function arrayUnique(arr, getKey) {
   const seen = new Set()
-  return arr.filter(item => {
+  return arr.filter((item) => {
     if (!seen.has(getKey(item))) {
       seen.add(getKey(item))
       return true
@@ -22,4 +21,4 @@ const arr = [
   { id: 1, label: '2' },
   { id: 2, label: '3' },
 ]
-console.log(arrayUnique(arr, (item) => item.id))
+console.warn(arrayUnique(arr, item => item.id))

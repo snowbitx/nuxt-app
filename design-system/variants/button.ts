@@ -1,4 +1,4 @@
 // Button variants placeholder.
 export const buttonVariants = {
-  base: "inline-flex items-center",
+  base: 'inline-flex items-center',
 }

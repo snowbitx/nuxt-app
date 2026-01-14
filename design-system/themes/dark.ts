@@ -1,4 +1,4 @@
 // Dark theme placeholder.
 export const darkTheme = {
-  name: "dark",
+  name: 'dark',
 }

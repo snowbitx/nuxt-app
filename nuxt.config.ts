@@ -6,9 +6,9 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     'shadcn-nuxt',
     '@nuxtjs/tailwindcss',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
   ],
-  
+
   shadcn: {
     /**
      * Prefix for all the imported component.
@@ -21,6 +21,6 @@ export default defineNuxtConfig({
      * @link https://nuxt.com/docs/api/nuxt-config#alias
      * @default "@/components/ui"
      */
-    componentDir: '@/components/ui'
-  }
+    componentDir: '@/components/ui',
+  },
 })

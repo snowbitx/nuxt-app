@@ -23,5 +23,4 @@ export function getCircleEntry(head) {
       }
     }
   }
-  return
 }
