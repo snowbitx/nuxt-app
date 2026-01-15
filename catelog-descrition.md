@@ -1,8 +1,8 @@
 # 目录结构
-
+```
 ├── app/
-│   ├── layout/
-│   ├── middleware/
+│   ├── layouts/
+│   ├── middlewares/
 │   ├── plugins/
 │   └── providers/
 │
@@ -45,6 +45,8 @@
 ├── constants/
 ├── docs/                   # 架构文档
 ├── tests/
+
+```
 
 # 提交信息规范
 

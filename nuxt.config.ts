@@ -23,4 +23,8 @@ export default defineNuxtConfig({
      */
     componentDir: '@/components/ui',
   },
+  css: ['~/assets/css/main.css'],
+  components: [
+    { path: '~/components/layouts' },
+  ],
 })

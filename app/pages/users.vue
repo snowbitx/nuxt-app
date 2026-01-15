@@ -1,4 +1,10 @@
 <!-- app/pages/users.vue -->
+<script setup lang="ts">
+definePageMeta({
+  title: 'users',
+})
+</script>
+
 <template>
   <div>
     <h2 class="text-2xl font-bold">
