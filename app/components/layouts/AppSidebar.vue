@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import { menu } from '~~/constants/menu'
+import { useAuth } from '~/composables/useAuth'
+
+const { user } = useAuth()
+
+const visibleMenu = computed(() => {
+  if (!user.value)
+    return []
+
+  return menu.filter((item) => {
+    if (!item.roles)
+      return true
+    return item.roles.includes(user.value.role)
+  })
+})
+</script>
+
 <template>
   <aside class="w-60 border-r p-4">
     <h1 class="mb-6 text-lg font-bold">
@@ -6,27 +25,13 @@
 
     <nav class="space-y-2">
       <NuxtLink
-        to="/"
+        v-for="item in visibleMenu"
+        :key="item.path"
+        :to="item.path"
         class="block rounded px-3 py-2 hover:bg-accent"
         active-class="bg-accent"
       >
-        Dashboard
-      </NuxtLink>
-
-      <NuxtLink
-        to="/users"
-        class="block rounded px-3 py-2 hover:bg-accent"
-        active-class="bg-accent"
-      >
-        Users
-      </NuxtLink>
-
-      <NuxtLink
-        to="/settings"
-        class="block rounded px-3 py-2 hover:bg-accent"
-        active-class="bg-accent"
-      >
-        Settings
+        {{ item.label }}
       </NuxtLink>
     </nav>
   </aside>

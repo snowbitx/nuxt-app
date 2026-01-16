@@ -2,6 +2,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'users',
+  roles: ['admin'],
 })
 </script>
 
